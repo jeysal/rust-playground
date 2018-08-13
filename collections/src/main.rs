@@ -1,3 +1,4 @@
+mod departments;
 mod num_stats;
 mod pig_latin;
 
@@ -7,4 +8,5 @@ fn main() {
     "{}",
     pig_latin::pig_latin("This is just a test sentence in English.")
   );
+  departments::departments_repl();
 }
