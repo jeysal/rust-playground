@@ -1,6 +1,6 @@
 use std::collections::HashMap;
 
-#[derive(Debug)]
+#[derive(PartialEq, Debug)]
 pub struct NumStats {
   avg: f64,
   med: f64,
@@ -45,4 +45,38 @@ fn mode(numbers: &Vec<i32>) -> i32 {
     .max_by_key(|(_, &count)| count)
     .map(|(num, _)| num)
     .expect("cannot find most common number to determine the mode"))
+}
+
+#[cfg(test)]
+mod tests {
+  use super::*;
+
+  #[test]
+  fn numbers_empty() {
+    assert!(num_stats(vec![]).is_none())
+  }
+
+  #[test]
+  fn single_number() {
+    assert_eq!(
+      NumStats {
+        avg: 42.0,
+        med: 42.0,
+        mode: 42,
+      },
+      num_stats(vec![42]).unwrap()
+    )
+  }
+
+  #[test]
+  fn multiple_numbers() {
+    assert_eq!(
+      NumStats {
+        avg: 23.0 / 8.0,
+        med: 3.0,
+        mode: 4,
+      },
+      num_stats(vec![0, 1, 2, 2, 4, 4, 4, 6]).unwrap()
+    )
+  }
 }

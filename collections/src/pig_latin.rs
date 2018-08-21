@@ -16,3 +16,28 @@ pub fn pig_latin(sentence: &str) -> String {
     .collect::<Vec<_>>()
     .join(" ")
 }
+
+#[cfg(test)]
+mod tests {
+  use super::*;
+
+  #[test]
+  fn starts_with_vowel() {
+    assert_eq!("applehay", pig_latin("apple"))
+  }
+
+  #[test]
+  fn starts_with_consonant() {
+    assert_eq!("ineapplepay", pig_latin("pineapple"))
+  }
+
+  #[test]
+  fn multiple_words() {
+    assert_eq!("anhay applehay", pig_latin("an apple"))
+  }
+
+  #[test]
+  fn empty() {
+    assert_eq!("", pig_latin(""))
+  }
+}
