@@ -1,0 +1,9 @@
+[workspace]
+members = [
+  "collections",
+  "fibonacci",
+  "guess",
+  "largest",
+  "minigrep",
+  "temp_conv"
+]
