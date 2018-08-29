@@ -3,6 +3,7 @@ members = [
   "collections",
   "fibonacci",
   "guess",
+  "hello",
   "largest",
   "minigrep",
   "temp_conv"
