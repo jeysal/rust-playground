@@ -4,6 +4,7 @@ members = [
   "fibonacci",
   "guess",
   "hello",
+  "impl_conflict",
   "largest",
   "minigrep",
   "temp_conv"
